@@ -49,7 +49,7 @@ def upload_form():
     <!doctype html>
     <title>Upload new File</title>
     <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
+    <form method=post action=/upload enctype=multipart/form-data>
     Secure Filename?  <input type="checkbox" value="true" name="secure"><br>
       <input type=file name=file><br>
       <input type=submit value=Upload>
