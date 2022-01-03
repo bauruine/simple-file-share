@@ -5,7 +5,7 @@ import string
 from flask import Flask, flash, request, redirect
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/var/www/upload/files/'
+UPLOAD_FOLDER = 'files/'
 HOST = 'https://upload.tuxli.ch'
 
 app = Flask(__name__)
@@ -40,7 +40,7 @@ def upload_file():
         filename = secure_filename(file.filename)
         extension = os.path.splitext(filename)[1]
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], f'{generated_name}{extension}'))
-        return f'{HOST}/files/{generated_name}{extension}/{filename}'
+        return f'{HOST}/files/{generated_name}{extension}/{filename}\n'
 
 
 @app.route('/', methods=['GET'])
